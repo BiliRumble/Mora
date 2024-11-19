@@ -939,7 +939,7 @@ const mRandomPost = {
     const cacheExpire = sessionStorage.getItem('randomPostsExpire');
 
     if (cache && cacheExpire && new Date().getTime() < cacheExpire) {
-      const randomPosts = JSON.parse(cache);
+      const randomPosts = JSON.parse(cache).sort(() => 0.5 - Math.random()).slice(0, 4);
       return this.renderingPosts(randomPosts);
     }
 
@@ -947,7 +947,14 @@ const mRandomPost = {
     sessionStorage.removeItem('randomPostsExpire');
     fetch('/articles-random.json')
       .then(response => response.json())
-      .then(data => {
+      .then(raw => {
+        const data = raw.map((i) => ({
+          title: i.title.length > 50 ? i.title.substring(0, 50) + '...' : i.title,
+          time: i.time,
+          categories: i.categories,
+          description: i.description,
+          link: i.link
+        }))
         sessionStorage.setItem('randomPosts', JSON.stringify(data));
         sessionStorage.setItem('randomPostsExpire', new Date().getTime() + 2 * 60 * 60 * 1000);
 
@@ -956,6 +963,7 @@ const mRandomPost = {
       });
   },
   renderingPosts: function(data) {
+    document.querySelector(".banner-random>.random-list").innerHTML = ''
     const post = data.map((i) => `
     <div class="post_item">
       <a class="post_box" title="${i.title}" href="javascript:void(0)" onclick="pjax.loadUrl('${i.link}')">
