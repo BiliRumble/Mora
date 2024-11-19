@@ -1,0 +1,60 @@
+#banner
+  margin: 0 auto
+  margin-top: 75px
+  padding: 35px 25px 0
+  max-width: 1400px
+  width: 100%
+  animation: slide-in .8s backwards
+
+  +maxWidth768()
+    padding: 20px 16px
+
+  #background
+    height: 400px
+    overflow: hidden
+    border: var(--card-border)
+    box-shadow: var(--shadow-border)
+    position: relative
+    transition: .6s
+    display: box
+    display: flex
+    align-items: center
+    addBorderRadius(8)
+
+    +maxWidth768()
+      height: 200px;
+
+    #site-info
+      padding: 0 1.25rem
+      width: 100%
+      text-align: center
+      z-index: 1
+      
+      #site-title
+        margin: 0
+        color: var(--white)
+        font-size: 1.85em
+
+        +minWidth768()
+            font-size: 2.85em
+
+      #site-subtitle
+        color: var(--light-grey)
+        font-size: 1.15em
+
+        +minWidth768()
+          font-size: 1.72em
+
+      #site_social_icons
+        display: none
+        margin: 0 auto
+        text-align: center
+
+        +maxWidth768()
+          display: block
+
+          .social-icon
+            margin: 0 10px
+            color: var(--light-grey)
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, .15)
+            font-size: 1.43em
