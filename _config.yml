@@ -124,8 +124,6 @@ post_meta:
     tags: false
     label: true
   post:
-    # Choose: left / center
-    position: left
     # Choose: created / updated / both
     date_type: both
     # Choose: date / relative
@@ -196,6 +194,10 @@ toc:
   # Only for post
   style_simple: false
   scroll_percent: true
+
+# 文章顶部的波浪
+post_top_waves:
+  enable: true
 
 post_copyright:
   enable: true
