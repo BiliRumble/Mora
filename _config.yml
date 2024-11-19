@@ -345,12 +345,11 @@ aside:
   card_webinfo:
     enable: true
     post_count: true
+    runtime_date: true
+    total_wordcount: true
+    site_uv: true
+    site_pv: true
     last_push_date: true
-    sort_order:
-    # Time difference between publish date and now
-    # Formal: Month/Day/Year Time or Year/Month/Day Time
-    # Leave it empty if you don't enable this feature
-    runtime_date:
 
 # --------------------------------------
 # Bottom right button
