@@ -203,20 +203,26 @@ beautify()
 
   .post-copyright
     position: relative
-    margin: 40px 0 10px
-    padding: 10px 16px
-    border: 1px solid var(--light-grey)
+    padding: 1rem 1.3rem
+    overflow: hidden
+    border: var(--card-border)
+    border-width: 1px
+    transition: 0.3s
+    position: relative
+    margin: 1.5rem 0px 0.5rem
     transition: box-shadow .3s ease-in-out
-    addBorderRadius()
+    addBorderRadius(8)
 
     &:before
       @extend .fontawesomeIcon
-      position: absolute
-      top: 2px
-      right: 12px
-      color: $theme-color
-      content: '\f1f9'
-      font-size: 1.3em
+      position: absolute;
+      right: 22px
+      top: -88px
+      content: "\f1f9"
+      font-size: 125px
+      color: var(--fontcolor)
+      opacity: 0.1
+      filter: blur(7px)
 
     &:hover
       box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5)
