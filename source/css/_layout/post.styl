@@ -161,6 +161,16 @@ beautify()
   width: 78%
 
   .tag_share
+    display: flex
+    align-items: center
+    position: relative
+    margin-top: 40px
+
+    +maxWidth768()
+      display: grid
+      justify-items: start
+      align-items: start
+
     &:after
       display: block
       clear: both
@@ -185,11 +195,42 @@ beautify()
           background: $light-blue
           color: var(--white)
 
+    .post-meta__tags
+      background: var(--card-bg)
+      border: var(--card-border)
+      color: var(--fontcolor)
+      border-radius: 8px
+      margin: 0
+      display: inline-flex
+      align-items: center
+      white-space: nowrap
+      height: 40px
+      margin-right: 0.5rem
+
+      &:before
+        content: "\f02c"
+        font-weight: 900
+        font-family: "Font Awesome 6 Free"
+        font-size: 12px
+        opacity: 0.4
+        padding-top: 2px
+        padding-right: 2px
+
+      +maxWidth768()
+        height: 34px
+    
+    .post-meta__tag-list
+      +maxWidth768()
+        display: flex;
+        width: 100%;
+        margin-top: 0.5rem
+
     .post-share
       display: inline-block
-      float: right
       margin: 8px 0 0
       width: fit-content
+      position: absolute
+      right: 0
 
       .social-share
         font-size: .85em
