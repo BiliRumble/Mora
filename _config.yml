@@ -21,6 +21,9 @@ menu:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
 
+# enable menu when dont't type anything in 'menu'
+force_enable_sidebar: false
+
 # --------------------------------------
 # Code块设置
 # --------------------------------------
@@ -274,6 +277,7 @@ footer:
 aside:
   enable: true
   hide: false
+  mobile: true
   # Show the button to hide the aside in bottom right button
   button: true
   # Position: left / right
